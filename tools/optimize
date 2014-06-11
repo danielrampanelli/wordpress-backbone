@@ -9,4 +9,4 @@ fi
 export GEM_HOME=${PWD}/gems
 export PATH=${GEM_HOME}/bin:${PATH}
 
-optipng -o7 -zm1-9 wp-content/themes/%THEME_NAME%/images/elements-*.png
+optipng -o7 -zm1-9 wp-content/themes/%THEME_SLUG%/images/elements-*.png

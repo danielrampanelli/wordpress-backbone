@@ -9,8 +9,8 @@ fi
 export GEM_HOME=${PWD}/gems
 export PATH=${GEM_HOME}/bin:${PATH}
 
-CSS=`find wp-content/themes/%THEME_NAME%/ -iname '*.css' -o -iname '*.scss' -exec git log -1 --format=%H {} +`
-JS=`find wp-content/themes/%THEME_NAME%/ -iname '*.js' -exec git log -1 --format=%H {} +`
+CSS=`find wp-content/themes/%THEME_SLUG%/ -iname '*.css' -o -iname '*.scss' -exec git log -1 --format=%H {} +`
+JS=`find wp-content/themes/%THEME_SLUG%/ -iname '*.js' -exec git log -1 --format=%H {} +`
 
 cat >${PWD}/local-versions.php <<EOL
 <?php

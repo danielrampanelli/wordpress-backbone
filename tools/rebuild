@@ -9,4 +9,4 @@ fi
 export GEM_HOME=${PWD}/gems
 export PATH=${GEM_HOME}/bin:${PATH}
 
-bundle exec compass compile --force wp-content/themes/%THEME_NAME%/
+bundle exec compass compile --force wp-content/themes/%THEME_SLUG%/
