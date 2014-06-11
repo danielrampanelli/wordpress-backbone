@@ -28,13 +28,13 @@
 
 # Allow versioning of own plugins/themes
 # !/wp-content/plugins/prefix-*/
-!/wp-content/themes/%THEME_NAME%/
+!/wp-content/themes/%THEME_SLUG%/
 
 # Compass
-/wp-content/themes/%THEME_NAME%/stylesheets/
-/wp-content/themes/%THEME_NAME%/.sass-cache/
-/wp-content/themes/%THEME_NAME%/images/elements-*.png
-/wp-content/themes/%THEME_NAME%/config.rb
+/wp-content/themes/%THEME_SLUG%/stylesheets/
+/wp-content/themes/%THEME_SLUG%/.sass-cache/
+/wp-content/themes/%THEME_SLUG%/images/elements-*.png
+/wp-content/themes/%THEME_SLUG%/config.rb
 
 # Mac
 .DS_Store
