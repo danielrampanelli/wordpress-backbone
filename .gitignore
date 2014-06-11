@@ -1,0 +1,40 @@
+# Development
+/.project
+/.settings/
+/.buildpath
+
+# Bundler
+/Gemfile.lock
+/gems/
+
+# Configuration
+/.htaccess
+/php.ini
+/local-config.php
+/local-versions.php
+
+# Log files
+/*.log
+
+# WordPress
+/wordpress/
+/wp-content/*
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/plugins/index.php
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/index.php
+
+# Allow versioning of own plugins/themes
+# !/wp-content/plugins/prefix-*/
+!/wp-content/themes/%THEME_NAME%/
+
+# Compass
+/wp-content/themes/%THEME_NAME%/stylesheets/
+/wp-content/themes/%THEME_NAME%/.sass-cache/
+/wp-content/themes/%THEME_NAME%/images/elements-*.png
+/wp-content/themes/%THEME_NAME%/config.rb
+
+# Mac
+.DS_Store
