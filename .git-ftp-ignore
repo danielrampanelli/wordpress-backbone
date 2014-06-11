@@ -1,0 +1,12 @@
+# Git
+/.gitignore
+/.git-ftp-ignore
+
+# Bundler
+/Gemfile
+
+# Development
+/tools/
+
+# Configuration
+/samples/
