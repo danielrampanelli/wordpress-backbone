@@ -1,0 +1,71 @@
+# BEGIN WEBSITE SPEED BOOST
+# Time cheat sheet in seconds
+# A86400 = 1 day
+# A172800 = 2 days
+# A2419200 = 1 month
+# A4838400 = 2 months
+# A29030400 = 1 year
+
+# Test which ETag setting works best on your Host/Server/Website
+# with Firefox Firebug, Firephp and Yslow benchmark tests.
+
+# Create the ETag (entity tag) response header field
+#FileETag MTime Size
+
+# Remove the ETag (entity tag) response header field
+Header unset ETag
+FileETag none
+
+<IfModule mod_expires.c>
+ExpiresActive on
+ExpiresByType image/jpg A4838400
+ExpiresByType image/gif A4838400
+ExpiresByType image/jpg A4838400
+ExpiresByType image/png A4838400
+ExpiresByType application/x-shockwave-flash A4838400
+ExpiresByType application/x-javascript A4838400
+ExpiresByType application/javascript A4838400
+ExpiresByType text/javascript A4838400
+ExpiresByType text/css A4838400
+#ExpiresByType text/html A86400
+# Default is 2 days below so the line above is not needed / commented out
+ExpiresDefault A172800
+</IfModule>
+
+<IfModule mod_headers.c>
+<FilesMatch "\.(js|css|flv|ico|pdf|avi|mov|ppt|doc|mp3|wmv|wav|gif|jpg|jpeg|png|swf)$">
+Header append Cache-Control "public"
+</FilesMatch>
+<FilesMatch "\.(txt|html)$">
+Header append Cache-Control "proxy-revalidate"
+</FilesMatch>
+<FilesMatch "\.(php|cgi|pl|htm|xml)$">
+Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
+Header set Pragma "no-cache"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+# Insert filters
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-httpd-php
+AddOutputFilterByType DEFLATE application/x-httpd-fastphp
+AddOutputFilterByType DEFLATE image/svg+xml
+
+# Drop problematic browsers
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+
+# Make sure proxies don't deliver the wrong content
+Header append Vary User-Agent env=!dont-vary
+</IfModule>
+# END WEBSITE SPEED BOOST

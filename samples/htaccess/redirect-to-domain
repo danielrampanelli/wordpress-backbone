@@ -1,0 +1,4 @@
+# make sure we always enter the site through the configured domain
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^example\.com
+RewriteRule (.*) http://example.com/$1 [R=301,L]
